@@ -49,6 +49,20 @@ const questions = [
 
     {
         type: 'input',
+        name: 'usage',
+        message: 'Enter details about using the repository',
+        validate: installationInput => {
+          if (installationInput) {
+            return true;
+          } else {
+            console.log('You need to enter usage information!');
+            return false;
+          }
+        }
+      },
+
+    {
+        type: 'input',
         name: 'contributing',
         message: 'Add contributing guidelines',
         validate: contributingInput => {
@@ -80,6 +94,34 @@ const questions = [
         name: 'license',
         message: "Choose a license from the list below (Required)",
         choices: ['APACHE 2.0', 'BSD 3', 'GPL 3.0', 'MIT', 'None']
+      },
+
+    {
+        type: 'input',
+        name: 'github',
+        message: 'Type in your GitHub account link',
+        validate: installationInput => {
+          if (installationInput) {
+            return true;
+          } else {
+            console.log('You need to enter your GitHub account link!');
+            return false;
+          }
+        }
+      },
+
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Type in your email',
+        validate: installationInput => {
+          if (installationInput) {
+            return true;
+          } else {
+            console.log('You need to enter your email!');
+            return false;
+          }
+        }
       },
 ];
 
